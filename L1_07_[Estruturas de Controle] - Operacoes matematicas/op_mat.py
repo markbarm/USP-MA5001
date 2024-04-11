@@ -1,5 +1,3 @@
-from math import trunc
-
 # Dicionário com caracteres que representarão operaçõe
 operacoes = {'+':'soma',
              '-':'subtracao',
@@ -26,7 +24,7 @@ def multiplicacao(a,b):
 def divisao(a,b):
     if b==0:
         return print('Erro: divisão por zero')
-    return print(trunc(a/b*1000)/1000)
+    return print(round(a/b,3))
 
 def potencia(a,b):
     if (a,b)==(0,0):
