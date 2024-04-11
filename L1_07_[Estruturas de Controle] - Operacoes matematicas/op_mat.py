@@ -1,6 +1,6 @@
 from math import trunc
 
-# dicionário com caracteres que representarão operaçõe
+# Dicionário com caracteres que representarão operaçõe
 operacoes = {'+':'soma',
              '-':'subtracao',
              '*':'multiplicacao',
@@ -36,6 +36,6 @@ def potencia(a,b):
 # INÍCIO DO ALGORITMO
 input= input()
 # Identifica a operação e números
-symbol, num1, num2 = reconhecer(input)
+operacao, num1, num2 = reconhecer(input)
 # imprime o resultado
-eval(operacoes[symbol])(num1,num2)
+eval(operacoes[operacao])(num1,num2)
