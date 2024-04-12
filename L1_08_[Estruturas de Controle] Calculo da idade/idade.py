@@ -42,7 +42,7 @@ def years(birthday,today):
 
 
 # INICIO DO ALGORITMO
-hoje = [12, 1, 2024]
+hoje = [4, 4, 2024]
 
 # ENTRADA DA DATA DE NASCIMENTO
 aniversario = list(map(int,input().split('/')))
