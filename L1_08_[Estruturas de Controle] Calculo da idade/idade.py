@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date
 
 def days(birthday,today):
     # input: data de aniversário e data atual
@@ -7,16 +7,16 @@ def days(birthday,today):
     # data do último aniversário de mês
     if birthday[0] <= today[0]:
         # mês atual
-        t1 = datetime(today[2],today[1],birthday[0])
+        t1 = date(today[2],today[1],birthday[0])
     else:
         # mês anterior
         if today[1]>1:    
-            t1 = datetime(today[2],today[1]-1,birthday[0])
+            t1 = date(today[2],today[1]-1,birthday[0])
         else:
-            t1 = datetime(today[2]-1,12,birthday[0])
+            t1 = date(today[2]-1,12,birthday[0])
     
     # data atual
-    t2 = datetime(today[2],today[1],today[0])
+    t2 = date(today[2],today[1],today[0])
 
     # dias depois do último aniversário de mês
     t3 = (t2-t1).days + 1
@@ -34,10 +34,17 @@ def months(birthday,today):
 def years(birthday,today):
     # input: data de aniversário e data atual
     # output: anos de idade
-    if birthday[0] <= today[0] and birthday[1] <= today[1]:
-        return today[2] - birthday[2]
+
+    age = today[2] - birthday[2]
+    
+    #correção se ainda não fez aniversário
+    if birthday[1] > today[1]:
+        age -= 1
     else:
-        return today[2] - birthday[2]-1
+        if birthday[1] == today[1] and birthday[0] > today[0]:
+            age -= 1
+    
+    return age
     
 
 
