@@ -10,7 +10,10 @@ def days(birthday,today):
         t1 = datetime(today[2],today[1],birthday[0])
     else:
         # mês anterior
-        t1 = datetime(today[2],today[1]-1,birthday[0])
+        if today[1]>1:    
+            t1 = datetime(today[2],today[1]-1,birthday[0])
+        else:
+            t1 = datetime(today[2]-1,12,birthday[0])
     
     # data atual
     t2 = datetime(today[2],today[1],today[0])
@@ -39,7 +42,7 @@ def years(birthday,today):
 
 
 # INICIO DO ALGORITMO
-hoje = [4, 4, 2024]
+hoje = [12, 1, 2024]
 
 # ENTRADA DA DATA DE NASCIMENTO
 aniversario = list(map(int,input().split('/')))
