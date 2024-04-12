@@ -1,12 +1,10 @@
 def is_prime(n):
     # input: número natural
     # output: 'True' se for primo ou 'False' se não for primo
-    test = True
     for i in range(2,n):
         if n%i == 0:
-            test= False
-            break
-    return test 
+            return False
+    return True
 
 # Entrada
 min, max = map(int,input().split(' '))

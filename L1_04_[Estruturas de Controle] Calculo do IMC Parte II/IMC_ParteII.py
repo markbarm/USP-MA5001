@@ -1,9 +1,9 @@
-import math
+from math import trunc
 
 while True:
     try:
         altura, massa = map(float,input().split(","))
-        imc = math.floor(100*massa/altura**2)/100
+        imc = trunc(100*massa/altura**2)/100
         if imc < 18.5:
             print('{0:.2f} Baixo peso'.format(imc))
         elif imc < 25.0:

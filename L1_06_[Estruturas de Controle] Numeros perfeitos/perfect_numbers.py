@@ -2,13 +2,12 @@ def is_perfect(n):
     # input: número natural
     # output: 'True' se for perfeito ou 'False' se não for perfeito
     soma = 0 
-    test = True
     for i in range(1,n):
         if n%i == 0:
             soma += i
     if soma != n:
-        test = False
-    return test 
+        return False
+    return True
 
 
 # Correção de bug na entrada 1 do runcodes
