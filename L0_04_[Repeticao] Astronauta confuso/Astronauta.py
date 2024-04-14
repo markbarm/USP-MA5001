@@ -26,7 +26,7 @@ def pos_final(steps,number):
         else:
             x,y = andar(x,y,d,steps)    
             teste = False  
-    return x,y
+    return print(f'O astronauta esta na posicao: {x} {y}')
 
 # Entrada do número de posições por lado, e posição do astronauta
 N,P = map(int,input().split())
@@ -37,11 +37,11 @@ L = N*N
 if P>L:
     print(f"O astronauta ja saiu em missao ha {P-L} chamadas.")
 else:    
-    i,j = pos_final(P,N)
+    pos_final(P,N)
     if P<L:    
-        print(f"O astronauta esta na posicao: {i} {j}\nAinda faltam {L-P} chamadas para a sua vez!")
+        print(f"Ainda faltam {L-P} chamadas para a sua vez!")
     else:
-        print(f"O astronauta esta na posicao: {i} {j}\nPreste atencao, astronauta, chegou a sua vez!")
+        print(f"Preste atencao, astronauta, chegou a sua vez!")
         
 
 
