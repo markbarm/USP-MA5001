@@ -41,18 +41,18 @@ while True:
     try:
         msg_decrip = ''
         line = input()
-        for n in range(len(line)):
-            if ord(line[n])>=65 and ord(line[n])<=90: #caractere Maiúsculo
-                index=ord(line[n])-65
+        for c in line:
+            if ord(c) >= 65 and ord(c) <= 90: #caractere Maiúsculo
+                index = ord(c)-65
                 index,rotor_1,rotor_2,rotor_3,contador = decriptogafar(index,rotor_1,rotor_2,rotor_3,contador)       
-                caractere=chr(index+65)
-            elif ord(line[n])>=97 and ord(line[n])<=122: #caractere minúsculo               
-                index=ord(line[n])-97
+                caractere = chr(index+65)
+            elif ord(c)>=97 and ord(c)<=122: #caractere minúsculo               
+                index = ord(c)-97
                 index,rotor_1,rotor_2,rotor_3,contador = decriptogafar(index,rotor_1,rotor_2,rotor_3,contador)
-                caractere=chr(index+97)
+                caractere = chr(index+97)
             else:
-                caractere=line[n]
-            msg_decrip+=caractere
+                caractere = c
+            msg_decrip += caractere
         print(msg_decrip)
     except EOFError:
         break
