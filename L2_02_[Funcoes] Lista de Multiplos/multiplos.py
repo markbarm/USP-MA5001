@@ -9,6 +9,3 @@ def multiplos(m,M,i,j):
 min, max = map(int,input().split(','))
 x, y = map(int,input().split(','))
 multiplos(min, max,x,y)
-
-
-
