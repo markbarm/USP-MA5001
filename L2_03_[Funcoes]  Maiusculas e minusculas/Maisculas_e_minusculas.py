@@ -1,5 +1,7 @@
-# função
+#Função
 def contador(texto):
+    #Input: string
+    #Output: número de caracteres Maiúsculas e minúsculas
     maiusculo = 0
     minusculo = 0
     for c in texto:
@@ -7,5 +9,5 @@ def contador(texto):
         if c.islower(): minusculo += 1
     return print(f'Maiúsculas: {maiusculo}\nMinúsculas: {minusculo}')
 
-#algoritmo
+#Algoritmo
 contador(input())
