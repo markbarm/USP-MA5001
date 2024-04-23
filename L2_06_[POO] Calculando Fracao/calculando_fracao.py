@@ -1,18 +1,18 @@
 class Fracao(object):
 
     def __init__(self, num,den):
-       self.num=num
-       self.den=den
+       self.num = num
+       self.den = den
        self.simplificar()
 
     def mdc(self):
-        num=int(self.num)
-        den=int(self.den)
+        num = int(self.num)
+        den = int(self.den)
         resto = num % den
         while(resto):
-        num=den
-        den=resto
-        resto=num%den
+            num = den
+            den=resto
+            resto=num%den
         return den
 
     def simplificar(self):
