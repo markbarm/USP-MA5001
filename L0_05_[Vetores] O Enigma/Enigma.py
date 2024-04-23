@@ -42,11 +42,11 @@ while True:
         msg_decrip = ''
         line = input()
         for c in line:
-            if ord(c) >= 65 and ord(c) <= 90: #caractere Maiúsculo
+            if c.isupper(): #caractere Maiúsculo
                 index = ord(c)-65
                 index,rotor_1,rotor_2,rotor_3,contador = decriptogafar(index,rotor_1,rotor_2,rotor_3,contador)       
                 caractere = chr(index+65)
-            elif ord(c)>=97 and ord(c)<=122: #caractere minúsculo               
+            elif c.islower(): #caractere minúsculo               
                 index = ord(c)-97
                 index,rotor_1,rotor_2,rotor_3,contador = decriptogafar(index,rotor_1,rotor_2,rotor_3,contador)
                 caractere = chr(index+97)
