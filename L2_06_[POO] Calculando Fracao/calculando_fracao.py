@@ -1,3 +1,12 @@
+# Dicionário com caracteres que representarão operaçõe
+operacoes = {'+':'soma',
+             '-':'subtracao',
+             '*':'multiplicacao',
+             '/':'divisao',
+             '**':'potencia',
+             '==':'igualdade'}
+
+# Classe fração e métodos
 class Fracao(object):
 
     def __init__(self, num,den):
@@ -48,24 +57,19 @@ class Fracao(object):
     def __str__(self):
        return str(self.num)+'/'+str(self.den)
 
-#Função que le a fração
+# Função que le a fração
 def input_fracao():
     a, b = map(int, input().split('/'))
     return Fracao(a,b)
 
-operacoes = {'+':'soma',
-             '-':'subtracao',
-             '*':'multiplicacao',
-             '/':'divisao',
-             '**':'potencia',
-             '==':'igualdade'}
 
 
-#Algoritmo 
+
+# Algoritmo 
 f1 = input_fracao()
 f2 = input_fracao()
 operacao = input()
 
-#Realiza a operação
+# Realiza a operação
 print(eval(f'f1.{operacoes[operacao]}(f2)'))
 
