@@ -48,7 +48,17 @@ class Fracao(object):
        divDen=self.den*outro.num
        divNum=self.num*outro.den
        return Fracao(divNum,divDen)
-
+    
+    def potencia(self,outro):
+        if outro.den==1:
+            potDen=self.den**(outro.num)
+            potNum=self.num**(outro.num)
+            return Fracao(potNum,potDen)
+        else:
+            potDen=self.den**(outro.num/outro.den)
+            potNum=self.num**(outro.num/outro.den)
+            return round(potDen/potNum,3)
+    
     def igualdade(self,outro):
        if(self.num/self.den==outro.num/outro.den):
            return True
@@ -61,9 +71,6 @@ class Fracao(object):
 def input_fracao():
     a, b = map(int, input().split('/'))
     return Fracao(a,b)
-
-
-
 
 # Algoritmo 
 f1 = input_fracao()
