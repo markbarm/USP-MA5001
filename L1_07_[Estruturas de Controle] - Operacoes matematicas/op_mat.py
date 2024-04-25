@@ -8,8 +8,7 @@ operacoes = {'+':'soma',
 # Função que reconhece operação e números
 def reconhecer(linha):
     for i in range(1,len(linha)):
-        if linha[i] in operacoes: 
-            return linha[i], int(linha[0:i]), int(linha[i+1:len(linha)])
+        if linha[i] in operacoes: return linha[i], int(linha[0:i]), int(linha[i+1:len(linha)])
 
 # Funções
 def soma(a,b):
