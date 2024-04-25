@@ -14,8 +14,7 @@ min, max = map(int,input().split(' '))
 # Números primos entre as entradas mínimo e máximo
 primes=[]
 for n in range(min, max+1):
-    if is_prime(n):
-        primes.append(n)
+    if is_prime(n): primes.append(n)
 
 # Imprime a saída
 if len(primes)>0:
