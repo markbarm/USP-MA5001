@@ -13,7 +13,7 @@ class Complexo(object):
         if self.imag<0: sign=' '
         return format(self.real,'.2f') + sign + format(self.imag,'.2f')+"i"
     
-#Implemente as operações a seguir como métodos da classe complexo a ser criada: +, -, /, *, abs, ==.
+    #Implemente as operações a seguir como métodos da classe complexo a ser criada: +, -, /, *, abs, ==.
 
     def __add__(self,other):
         resultado_real = self.real + other.real
@@ -43,7 +43,8 @@ class Complexo(object):
             return True
         else: 
             return False
-            
+
+# Função que lê um número complexo            
 def le_complexo(linha):
     real,imag = linha.split(',')
     return Complexo(real,imag)
