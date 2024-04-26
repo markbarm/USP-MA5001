@@ -31,7 +31,7 @@ class Complexo(object):
         return Complexo(resultado_real,resultado_imag)
     
     def __abs__(self):
-        return round(sqrt(self.real**2 + self.imag**2),2)
+        return sqrt(self.real**2 + self.imag**2)
         
     def __truediv__(self,other):
         resultado_real = (self.real * other.real + self.imag * other.imag)/(other.real**2 + other.imag**2)
@@ -39,7 +39,7 @@ class Complexo(object):
         return Complexo(resultado_real,resultado_imag)
 
     def __eq__(self,other):
-        if (self.real,self.imag)== (other.real,other.imag):
+        if (self.real,self.imag) == (other.real,other.imag):
             return True
         else: 
             return False
