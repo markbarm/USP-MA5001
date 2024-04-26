@@ -59,4 +59,3 @@ for op in operacoes:
         print('abs:{0:.2f}\nabs:{1:.2f}'.format(abs(x),abs(y)))
     else:
         print('{0}:{1}'.format(op,eval(f'x{op}y')))
-    
