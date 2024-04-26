@@ -2,7 +2,7 @@
 
 class Funcionario(object):
 
-    def _init_(self,nome,sal,dep):
+    def __init__(self,nome,sal,dep):
         self.nome = nome
         self.sal = sal
         self.dep = dep
