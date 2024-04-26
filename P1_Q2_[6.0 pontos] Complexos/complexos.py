@@ -9,7 +9,9 @@ class Complexo(object):
         self.imag = float(imag)
     
     def __str__(self):
-        return format(self.real,'.2f') + "+" + format(self.imag,'.2f')+"i"
+        sign='+'
+        if self.imag<0: sign=' '
+        return format(self.real,'.2f') + sign + format(self.imag,'.2f')+"i"
     
 #Implemente as operações a seguir como métodos da classe complexo a ser criada: +, -, /, *, abs, ==.
 
@@ -32,8 +34,8 @@ class Complexo(object):
         return round(sqrt(self.real**2 + self.imag**2),2)
         
     def __truediv__(self,other):
-        resultado_real = (self.real * other.real + self.imag * other.imag)/abs(other)
-        resultado_imag = (-self.real * other.imag + self.imag * other.real)/abs(other)
+        resultado_real = (self.real * other.real + self.imag * other.imag)/(other.real**2 + other.imag**2)
+        resultado_imag = (-self.real * other.imag + self.imag * other.real)/(other.real**2 + other.imag**2)
         return Complexo(resultado_real,resultado_imag)
 
     def __eq__(self,other):
@@ -45,3 +47,16 @@ class Complexo(object):
 def le_complexo(linha):
     real,imag = linha.split(',')
     return Complexo(real,imag)
+
+
+#Algoritmo
+operacoes=list(input().split(' '))
+x = le_complexo(input())
+y = le_complexo(input())
+
+for op in operacoes:
+    if op == 'abs':
+        print('abs:{0:.2f}\nabs:{1:.2f}'.format(abs(x),abs(y)))
+    else:
+        print('{0}:{1}'.format(op,eval(f'x{op}y')))
+    
