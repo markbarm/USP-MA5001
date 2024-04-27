@@ -10,12 +10,12 @@ def multiplicacao(a,b):
 
 def divisao(a,b):
     if b==0:
-        return print('Erro: divisão por zero')
+        return 'Erro: divisão por zero'
     return round(a/b,3)
 
 def potencia(a,b):
     if (a,b)==(0,0):
-        return print('Erro: base e expoente nulos')
+        return 'Erro: base e expoente nulos'
     return a**b
 
 # Função que reconhece operação e números
@@ -26,18 +26,15 @@ def reconhecer(linha):
 
 # Função que executa a entrada
 def executar_op(linha):
-    operacoes = {'+':soma,
+    operacoes = {
+                '+':soma,
                 '-':subtracao,
                 '*':multiplicacao,
                 '/':divisao,
                 '^':potencia
     }
     op, num1, num2 = reconhecer(linha) 
-    print(operacoes.get(op)(num1,num2))
+    return operacoes.get(op)(num1,num2)
 
-
-# INÍCIO DO ALGORITMO
-
-executar_op(input())
- 
-# print(eval(operacoes[operacao])(num1,num2))
+# Algoritmo
+print(executar_op(input()))
