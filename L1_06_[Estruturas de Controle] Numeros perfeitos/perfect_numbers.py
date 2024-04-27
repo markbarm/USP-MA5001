@@ -11,20 +11,13 @@ def is_perfect(n):
 
 
 # Correção de bug na entrada 1 do runcodes
-input=input()
-if '  ' in input:
-    input=input.replace('  ', ' ')
+linha = input()
+if '  ' in linha: linha = linha.replace('  ', ' ')
 
-# Entrada
-min, max = map(int,input.split(' '))
+min, max = map(int,linha.split(' '))
 
-# Números perfeitos entre mín e máx
 perfect=[]
 for n in range(min, max+1):
     if is_perfect(n): perfect.append(n)
 
-# Imprime a saída
-if len(perfect)>0:
-    [print(perfect[i]) for i in range(len(perfect))]
-else:
-    print('Não foi encontrado número perfeito')
+[print(perfect[i]) for i in range(len(perfect))] if len(perfect)>0 else print('Não foi encontrado número perfeito')
