@@ -72,7 +72,7 @@ for i in tam:
     equipe.append(le_funcionario(input()))
 
 opcao = 0
-while opcao in '1234':
+while opcao not in '1234':
     opcao = input()
 
 if opcao == '1':
