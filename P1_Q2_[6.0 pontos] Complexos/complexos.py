@@ -45,15 +45,14 @@ class Complexo(object):
             return False
 
 # Função que lê um número complexo            
-def le_complexo(linha):
-    real,imag = linha.split(',')
+def le_complexo():
+    real,imag = input().split(',')
     return Complexo(real,imag)
-
 
 #Algoritmo
 operacoes=list(input().split(' '))
-x = le_complexo(input())
-y = le_complexo(input())
+x = le_complexo()
+y = le_complexo()
 
 for op in operacoes:
     if op == 'abs':
