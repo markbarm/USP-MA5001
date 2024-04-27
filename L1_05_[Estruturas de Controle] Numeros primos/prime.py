@@ -8,13 +8,11 @@ def is_prime(n):
             return False
     return True
 
-# Entrada
+# Algoritmo
 min, max = map(int,input().split(' '))
 
-# Números primos entre as entradas mínimo e máximo
 primes=[]
 for n in range(min, max+1):
     if is_prime(n): primes.append(n)
 
-# Imprime a saída
 print(*primes) if len(primes)>0 else print('Não há números primos')
