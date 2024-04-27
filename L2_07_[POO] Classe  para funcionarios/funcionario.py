@@ -23,24 +23,24 @@ class Funcionario(object):
     #método __str__
     def __str__(self):
         return self.nome +' '+ format(self.salario,".1f") +' '+ self.dept
-    
+
 #Função 1. Recebe o nome e horas trabalhadas, retornando os dados do funcionário com o salário ajustado.
 def ajuste_sal(lista):
     nome, horas = input().split(' ')
     for f in lista:
         if f.nome == nome: 
             f.set_salario(horas)
-            return print(f)
-    return print('funcionario não encontrado')
+            return f
+    return 'Funcionario não encontrado'
 
-#Função 2. 
+#Função 2. retornado os dados do funcionário que possui o maior salário
 def maior_sal(lista):
     maximo = 0
     for x in lista:
         if x.salario > maximo:
             f_maior = x
             maximo = x.salario
-    print(f_maior)
+    return f_maior
 
 #Função 3. Recebe o nome e novo departamento do funcionário, retornando os dados atualizados.
 def novo_dept(lista):
@@ -48,20 +48,21 @@ def novo_dept(lista):
     for f in lista:
         if f.nome == nome: 
             f.set_departamento(novo)
-            return print(f)
-    return print('funcionario não encontrado')
+            return f
+    return 'Funcionario não encontrado'
 
 #Função 4. Retorna a média salarial da lista de funcionários
 def media_sal(lista):
     media = 0
     for f in lista:
         media += f.salario/len(lista)
-    print('{0:.2f}'.format(media))
+    return '{0:.2f}'.format(media)
 
+# Função default
 def default():
-    print('Opção invalida')
+    return 'Opção invalida'
 
-# Função que Lê uma equipe
+# Função que Lê uma equipe de funcionários
 def team():
     tam = int(input())
     lista = []
@@ -73,16 +74,16 @@ def team():
     return lista
 
 # Função que executa de acordo com a opção escolhida
-def executar(op):
+def executar():
     opcoes={
         '1':ajuste_sal,
         '2':maior_sal,
         '3':novo_dept,
         '4':media_sal,
     }    
-    opcoes.get(str(op),default)(equipe)
+    op = int(input())
+    print(opcoes.get(str(op),default)(equipe))
 
 # Algoritmo
 equipe = team()
-opcao = int(input())
-executar(opcao)
+executar()
