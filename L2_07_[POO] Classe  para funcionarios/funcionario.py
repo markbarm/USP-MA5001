@@ -68,7 +68,7 @@ def le_funcionario(linha):
 tam = int(input())
 
 equipe = []
-for i in tam:
+for i in range(tam):
     equipe.append(le_funcionario(input()))
 
 opcao = 0
