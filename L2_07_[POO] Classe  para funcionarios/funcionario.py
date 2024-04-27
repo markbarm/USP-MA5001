@@ -58,7 +58,7 @@ def media_sal(lista):
 
 # Função Lê funcionário
 def le_funcionario(linha):
-    if '  ' in linha: linha.replace('  ',' ')
+    if '  ' in linha: linha = linha.replace('  ',' ')
     nome, sal, dept = linha.split(' ')
     return Funcionario(nome, sal, dept)
 
@@ -71,16 +71,14 @@ equipe = []
 for i in range(tam):
     equipe.append(le_funcionario(input()))
 
-opcao = 0
-while opcao not in '1234':
-    opcao = input()
+opcao = int(input())
 
-if opcao == '1':
+if opcao == 1:
     nome, horas = input().split(' ')
     ajuste_sal(equipe,nome,horas)
-elif opcao == '2':
+elif opcao == 2:
     maior_sal(equipe)
-elif opcao == '3':
+elif opcao == 3:
     nome, novo = input().split(' ')
     novo_dept(equipe,nome,novo)
 else:
