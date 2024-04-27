@@ -1,6 +1,7 @@
 
 # FUNÇÃO ANDAR
 def andar(x,y,direcao,passos):
+    #direção: 0 -> direita, 1 -> esquerda, 2-> cima, 3-> baixo
     if direcao%4 == 0:      
         y += passos
     elif direcao%4 == 1:
@@ -13,10 +14,8 @@ def andar(x,y,direcao,passos):
 
 # FUNÇÃO POSIÇÃO FINAL
 def pos_final(steps,number):
-    x = 0                   #índice da linha
-    y = -1                  #índice da coluna
-    d = 0                   #definir uma direção: 0 -> direita, 1 -> esquerda, 2-> cima, 3-> baixo
-    teste = True            #controle para fechar o loop
+    x,y,d = 0,-1,0       # parametros iniciais
+    teste = True            
     while teste:
         if steps > number:
             x,y = andar(x,y,d,number)    
