@@ -28,8 +28,8 @@ def pos_final(steps,number):
     return print(f'O astronauta esta na posicao: {x} {y}')
 
 # Algoritmo
-N,P = map(int,input().split()) # Entrada do número de posições por lado, e posição do astronauta
-L = N*N  # Número de lugares na fila
+N,P = map(int,input().split())  # Entrada do número de posições por lado, e posição do astronauta
+L = N*N                         # Número de lugares na fila
 
 if P>L:
     print(f"O astronauta ja saiu em missao ha {P-L} chamadas.")
