@@ -1,31 +1,27 @@
-#Listas que serão usadas para armazenar as informações dos retângulos
-retangulo_1 = []
-retangulo_2 = []
-retangulo_3 = []
+#Função que lê os dados de um retângulo
+def le_rect():
+    lista = []
+    teste = True
+    while teste:
+        lista = list(map(int,input().split()))
+        if (lista[2],lista[3]) >= (0,0):
+            teste = False
+    return lista
+
+#Função que determina possível intersecção entre dois retângulos
+def intersec(rect_1,rect_2):
+    lista = []
+    lista.append(max(rect_1[0] , rect_2[0]))
+    lista.append(max(rect_1[1] , rect_2[1]))
+    lista.append(min(rect_1[0] + rect_1[2],rect_2[0] + rect_2[2]) - lista[0])
+    lista.append(min(rect_1[1] + rect_1[3],rect_2[1] + rect_2[3]) - lista[1])
+    if (lista[2],lista[3]) >= (0,0):
+        print(f'HIT: {lista[0]} {lista[1]} {lista[2]} {lista[3]}')
+    else:
+        print('MISS')
 
 
-# Leitura de informações do retângulo 1. 
-teste = True
-while teste:
-    retangulo_1 = list(map(int,input().split()))
-    if retangulo_1[2] >= 0 and retangulo_1[3] >= 0:
-        teste = False
-
-# Leitura de informações do retângulo 2
-teste = True
-while teste:
-    retangulo_2 = list(map(int,input().split()))
-    if retangulo_2[2] >= 0 and retangulo_2[3] >= 0:
-        teste = False
-
-# calcula dimensões da possível intersecção dos retângulos 
-retangulo_3.append(max(retangulo_1[0] , retangulo_2[0]))
-retangulo_3.append(max(retangulo_1[1] , retangulo_2[1]))
-retangulo_3.append(min(retangulo_1[0] + retangulo_1[2],retangulo_2[0] + retangulo_2[2]) - retangulo_3[0])
-retangulo_3.append(min(retangulo_1[1] + retangulo_1[3],retangulo_2[1] + retangulo_2[3]) - retangulo_3[1])
-
-# Se ambos lados forem positivos então há intersecção
-if retangulo_3[2] >= 0 and retangulo_3[3] >= 0:
-    print(f'HIT: {retangulo_3[0]} {retangulo_3[1]} {retangulo_3[2]} {retangulo_3[3]}')
-else:
-    print('MISS')
+#Algoritmo
+retangulo_1 = le_rect()
+retangulo_2 = le_rect()
+intersec(retangulo_1,retangulo_2)
