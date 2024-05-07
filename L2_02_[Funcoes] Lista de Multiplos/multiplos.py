@@ -1,7 +1,5 @@
 def multiplos(m,M,i,j):
-    lista = []
-    for n in range(m, M+1):
-        if n%(x*y) == 0: lista.append(str(n))
+    lista = [str(n) for n in range(m, M+1) if n%(i*j) == 0]
     return print(','.join(lista))
 
 # Algoritmo

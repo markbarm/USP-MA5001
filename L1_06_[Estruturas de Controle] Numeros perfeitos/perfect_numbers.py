@@ -16,8 +16,6 @@ if '  ' in linha: linha = linha.replace('  ', ' ')
 
 min, max = map(int,linha.split(' '))
 
-perfect=[]
-for n in range(min, max+1):
-    if is_perfect(n): perfect.append(n)
+perfect=[n for n in range(min, max+1) if is_perfect(n)]
 
-[print(perfect[i]) for i in range(len(perfect))] if len(perfect)>0 else print('Não foi encontrado número perfeito')
+[print(n) for n in perfect] if len(perfect)>0 else print('Não foi encontrado número perfeito')

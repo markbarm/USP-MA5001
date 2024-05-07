@@ -20,8 +20,8 @@ def potencia(a,b):
 
 # Função que reconhece operação e números
 def reconhecer(linha):
-    for i in range(1,len(linha)):
-        if linha[i] in '+-*/^': 
+    for i, c in enumerate(linha):
+        if c in '+-*/^': 
             return linha[i], int(linha[0:i]), int(linha[i+1:len(linha)])
 
 # Função que executa a entrada
