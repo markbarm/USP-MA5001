@@ -10,7 +10,7 @@ def caracteres(lista):
         else:
             return '@' #não alfanumérico
     else: 
-        return caracteres([lista.pop()]) + caracteres(lista)
+        return caracteres([lista.pop(0)]) + caracteres(lista)
 
 
 #algoritmo
